@@ -1,4 +1,4 @@
-#perfect guess
+#perfect number_guessing_game
 import random
 
 n = random.randint(1, 100)
