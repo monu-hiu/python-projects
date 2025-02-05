@@ -1,18 +1,29 @@
-#perfect guess
+#Snake , Gun , Water Game
 import random
+computer = random.choice([-1 , 0 , 1])
+youstr = input("Enter your choice: ")
+youDict = {"s": 1 ,"w": -1 , "g": 0}
+reverseDict = {1:"Snake" , -1: "Water" , 0: "Gun"}
 
-n = random.randint(1, 100)
-a = -1
-guesses = 1
+you = youDict[youstr]
 
-while a != n:
-    
-    a = int(input("Guess a number: "))
-    if a > n:
-        print("Lower number, please")
-        guesses += 1
-    elif a < n:
-        print("Higher number, please")
-        guesses += 1
-    else:
-        print(f"You have guessed the number {n} correctly in {guesses} attempts!")
+#By now we have 2 numbers(variables) , you and computer
+
+print(f"You chose {reverseDict[you]}\nComputer chose {reverseDict[computer]}")
+
+if(computer == you):
+    print("Its draw")
+else:
+    if(computer ==-1 and you == 1):
+        print("You win!")
+
+if(computer ==-1 and you == 0):
+    print("You lose!")
+elif(computer ==1 and you == -1):
+    print("You lose!")
+elif(computer ==1 and you == 0):
+    print("You win!")
+elif(computer ==0 and you == -1):
+    print("You win!")
+elif(computer ==0 and you == 1):
+    print("You lose!")
